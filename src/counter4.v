@@ -15,7 +15,7 @@ module counter4(
     wire [3:0] mux_out_w;       // mux output
     wire [3:0] add_sub_out_w;   // addSub8 output
     wire [3:0] q_w;
-	wire [3:0] q_r; // register for FF
+	reg [3:0] q_r; // register for FF
     
     // clock enable FF if one is active
     wire ce_w = (up_i & ~dw_i) | (dw_i & ~up_i) | ld_i;
