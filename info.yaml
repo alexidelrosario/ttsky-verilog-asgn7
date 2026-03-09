@@ -20,7 +20,6 @@ project:
     - "fulladder4.v" # 4bit ripple carry adder used by counter4.v
     - "addsub8.v" # 4bit adder and subtractor
     - "counter4.v" # 4 bit up/down counter with load and clock enable 
-    - "tb_top_level.v" # test bench
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
