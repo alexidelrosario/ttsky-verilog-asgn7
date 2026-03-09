@@ -20,7 +20,7 @@ async def test_project(dut):
     dut.ui_in.value = 0
     dut.uio_in.value = 0
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 1)
+    await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
 
     dut._log.info("Test project behavior")
@@ -38,7 +38,7 @@ async def test_project(dut):
 
     # Reset
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 1)
+    await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
 
     # TEST 2: WIN - stop at 10
@@ -63,9 +63,9 @@ async def test_project(dut):
     # TEST 4: reset clears everything
     dut._log.info("Reset Test")
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 1)
+    await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
-    await ClockCycles(dut.clk, 1)
+    await ClockCycles(dut.clk, 2)
     count = int(dut.uo_out.value) & 0xF
     win = (int(dut.uo_out.value) >> 4) & 1
     assert count == 0 and win == 0, f"Reset Test: FAIL - count={count} win={win}"
