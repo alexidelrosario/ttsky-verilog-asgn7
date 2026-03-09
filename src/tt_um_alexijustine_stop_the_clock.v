@@ -33,17 +33,13 @@ module tt_um_alexijustine_stop_the_clock(
 
     
 wire up_w;
-// wire [3:0] q_w;
-wire stopped_w;
+reg stopped_w;
 
 // latch for stop button
-FDRE ff_stop (
-    .C(clk),
-    .R(~rst_n),        // active low
-    .CE(1'b1),        // captures on button press
-    .D(stopped_w | ui_in[0]),           // once stopped, stays stopped
-    .Q(stopped_w)
-);
+always @(posedge clk) begin
+    if (~rst_n) stopped_w <= 1'b0;
+    else stopped_w <= stopped_w | ui_in[0];
+end
 
 assign up_w = ~stopped_w;  // count up until stop is pressed.
 
