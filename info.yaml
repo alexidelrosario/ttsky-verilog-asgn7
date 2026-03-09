@@ -18,7 +18,7 @@ project:
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "fulladder4.v" # 4bit ripple carry adder used by counter4.v
-    - "addSub8.v" # 4bit adder and subtractor
+    - "addsub8.v" # 4bit adder and subtractor
     - "counter4.v" # 4 bit up/down counter with load and clock enable 
     - "tb_top_level.v" # test bench
 
