@@ -1,10 +1,15 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg)
-
 # Stop the Clock — Structural Verilog ASIC Design 
 
 A single-player reaction game implemented as a custom digital ASIC following the [Tiny Tapeout](https://tinytapeout.com) workflow. 
 
 A 4-bit counter increments on every clock edge. The player presses **STOP** to freeze the count — land exactly on **10** and a `win` output goes high. Built from scratch in structural Verilog: no behavioral counters, no `+`/`-` operators, every adder and flip-flop is hand-instantiated gate logic.
+
+![Verilog](https://img.shields.io/badge/Language-Verilog-blue)
+![ASIC Design](https://img.shields.io/badge/Design-ASIC-green)
+![VLSI](https://img.shields.io/badge/VLSI-Design-orange)
+![Tiny Tapeout](https://img.shields.io/badge/Flow-TinyTapeout-green)
+![OpenLane](https://img.shields.io/badge/Layout-OpenLane-blue)
+![](../../workflows/gds/badge.svg)
 
 ## How it works
 
